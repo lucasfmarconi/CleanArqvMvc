@@ -26,8 +26,9 @@ public static class DependencyInjection
         //TODO: Should be there? I think this service registrations should reside somewhere else
         services.AddScoped<IProductService, ProductService>();
         services.AddScoped<ICategoryService, CategoryService>();
-
-        services.AddAutoMapper(typeof(DomainToDTOMappingProfile));
+        
+        //TODO: Remove AutoMapper reference and utilize Mapster mapping
+        services.AddAutoMapper(typeof(DomainToDtoMappingProfile));
 
         services.AddMediatR(cfg =>
         {
