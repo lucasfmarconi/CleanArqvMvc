@@ -7,14 +7,16 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj", "CleanArchMvc.WebUI/"]
-COPY ["CleanArchMvc.Infra.IoC/CleanArchMvc.Infra.IoC.csproj", "CleanArchMvc.Infra.IoC/"]
-COPY ["CleanArchMvc.Domain/CleanArchMvc.Domain.csproj", "CleanArchMvc.Domain/"]
-COPY ["CleanArchMvc.Application/CleanArchMvc.Application.csproj", "CleanArchMvc.Application/"]
-COPY ["CleanArchMvc.Infra.Data/CleanArchMvc.Infra.Data.csproj", "CleanArchMvc.Infra.Data/"]
-RUN dotnet restore "CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj"
+COPY ["src/Directory.Build.props", "src/"]
+COPY ["Directory.Build.props", "."]
+COPY ["src/CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj", "src/CleanArchMvc.WebUI/"]
+COPY ["src/CleanArchMvc.Infra.IoC/CleanArchMvc.Infra.IoC.csproj", "src/CleanArchMvc.Infra.IoC/"]
+COPY ["src/CleanArchMvc.Domain/CleanArchMvc.Domain.csproj", "src/CleanArchMvc.Domain/"]
+COPY ["src/CleanArchMvc.Application/CleanArchMvc.Application.csproj", "src/CleanArchMvc.Application/"]
+COPY ["src/CleanArchMvc.Infra.Data/CleanArchMvc.Infra.Data.csproj", "src/CleanArchMvc.Infra.Data/"]
+RUN dotnet restore "src/CleanArchMvc.WebUI/CleanArchMvc.WebUI.csproj"
 COPY . .
-WORKDIR "/src/CleanArchMvc.WebUI"
+WORKDIR "/src/src/CleanArchMvc.WebUI"
 RUN dotnet build "CleanArchMvc.WebUI.csproj" -c Release -o /app/build
 
 FROM build AS publish
