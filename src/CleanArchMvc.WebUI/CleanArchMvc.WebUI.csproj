@@ -6,7 +6,6 @@
     <ProjectReference Include="..\CleanArchMvc.Infra.IoC\CleanArchMvc.Infra.IoC.csproj" />
   </ItemGroup>
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
     <UserSecretsId>edc60ebb-c674-4956-99ab-f1abd873ef14</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
   </PropertyGroup>
