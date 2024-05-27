@@ -3,6 +3,8 @@
     <Authors>Lucas F Marçoni Ferreira</Authors>
     <ProduceReferenceAssembly>false</ProduceReferenceAssembly>
     <SatelliteResourceLanguages>en</SatelliteResourceLanguages>
-    <ImplicitUsings>disable</ImplicitUsings>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TargetFramework>net8.0</TargetFramework>
  </PropertyGroup>
 </Project>

@@ -1,5 +1,4 @@
 ﻿using CleanArchMvc.Domain.Validation;
-using System.Collections.Generic;
 
 namespace CleanArchMvc.Domain.Entities;
 
